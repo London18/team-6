@@ -2,3 +2,4 @@
 
 Libraries utilised:
 - Flask-1.0.2
+- Database Scheme
