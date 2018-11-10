@@ -1,0 +1,283 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: white;
+  margin: 0;
+  color: #fff;
+  background-repeat: no-repeat;
+  line-height: 1.6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin-top: 15px;
+}
+
+.img {
+    opacity: 20%;
+}
+.topnav {
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+    background-color: white;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #959595;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    border-bottom: 1px solid #959595;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+
+}
+
+/* Showcase */
+#showcase {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+#showcase .container {
+  margin-top: 25vh;
+}
+
+#showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+#showcase h2 {
+  font-size: 2rem;
+}
+
+#showcase {
+  height: 50vh;
+}
+
+#showcase .container {
+  margin-top: 15vh;
+}
+
+#showcase h1 {
+  font-size: 3rem;
+}
+
+#showcase h2 {
+  font-size: 1.5rem;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1180px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.search {
+  background-color: #ffffff;
+    color: #959595;
+    border-bottom: 1px solid #959595;
+}
+
+.directory {
+  background-color: #ffffff;
+    color: #959595;
+    border-bottom: 1px solid #959595;
+}
+
+.faqs {
+    background-color: #ffffff;
+    color: #959595;
+    border-bottom: 1px solid #959595;
+}
+
+.showcase-head{
+  padding: 5%;
+  background-image: url("css/header.jpg");
+}
+
+
+#hh, #hg {
+  color: #ffffff;
+}
+
+/*Search form*/
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: white;
+  margin-top: -1px;
+
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*FAQs accordion*/
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #ffffff !important;
+    color: #959595;;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ffffff;
+    border-bottom: 1px solid  #959595;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+
+/*update database */
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #959595;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: auto;
+    display: block;
+}
+
+input[type=submit]:hover {
+    border-bottom: 1px #959595;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: white;
+    color: #959595;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
+#update-data {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+#search-header{
+  margin-top: 10%;
+  margin-left: 35%;
+    color: #959595;
+}
+
+#update-header{
+  margin-top: 10%;
+  margin-left: 40%;
+    color: #959595;
+}
+
+#employee-header{
+  margin-left: 40%;
+  margin-top: 10%;
+  border-bottom: 2px solid white;
+
+}
+
+#employee-header1{
+  margin-left: 20%;
+    color: #959595;
+}
+
+#total{
+    color: #959595 !important;
+    background-color: white !important;
+}
+
+#topic-category{
+  float: left;
+  display: inline-block;
+}
+
+#footerspace {
+  padding: 1.5%;
+}
+
+#footerspace1 {
+    padding: 10.5%;
+    margin-bottom: 100px;
+}
+
+#logo {
+  margin-left:40%;
+  margin-top:5%;
+  margin-bottom: -5%;
+}
