@@ -3,10 +3,9 @@ import configparser
 
 
 class DB:
-    """Includes all the methods related to database connection and information
-    retrieval."""
+    """Includes all the methods related to database connection."""
     # Specify file which includes credentials for connection to database
-    CREDENTIALS_FILE = "../config.ini"
+    CREDENTIALS_FILE = "../../config.ini"
 
     def __init__(self):
         """Constructor"""
@@ -55,36 +54,9 @@ class DB:
             print("Problem connecting to the database. Reason: {}".format(str(ex)))
             exit()
 
-    def select_all(self, table_name):
-        """Performs a select (star) statement to a given table.
-
-        Args:
-            table_name: Name of table that data is to be retrieved from
-
-        Returns:
-            All data from table
-        """
-        with self.__connection.cursor() as cursor:
-            sql = "SELECT * FROM `" + table_name + "`"
-            cursor.execute(sql)
-            return cursor.fetchall()
-
-    def select_cols(self, cols, table):
-        """Perform a select statement for a given list of columns.
-
-        Args:
-            cols: Columns to be selected [list]
-            table: Name of table that data is to be retrieved from
-
-        Returns:
-            Data from columns specified
-        """
-        result = []
-        with self.__connection.cursor() as cursor:
-            sql = "SELECT `" + "`, `".join(cols) + "` FROM `" + table + "`"
-            cursor.execute(sql)
-            result.append(cursor.fetchall())
-        return result
+    def get_connection(self):
+        """Returns the connection"""
+        return self.__connection
 
     def apply_changes(self):
         """Commits any changes made to the database
@@ -95,4 +67,3 @@ class DB:
         """Terminates the connection to the database
         """
         self.__connection.close()
-
