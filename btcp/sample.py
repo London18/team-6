@@ -3,29 +3,30 @@ import configparser
 
 
 class DB:
+    """Includes all the methods related to database connection and information
+    retrieval."""
     # Specify file which includes credentials for connection to database
     CREDENTIALS_FILE = "../config.ini"
 
     def __init__(self):
+        """Constructor"""
         self.__hostname = None
         self.__username = None
         self.__password = None
         self.__database = None
         self.__charset = None
         self.__connection = None
-
         self.retrieve_credentials()
         self.connect_database()
 
     def retrieve_credentials(self):
-        """Fetches credentials from credentials file in order to access database
-        """
+        """Fetches credentials from credentials file in order to access database"""
         config = configparser.ConfigParser()
         config.read(DB.CREDENTIALS_FILE)
 
         if "mysql" in config:
             if "hostname" in config['mysql'] and "username" in config['mysql'] \
-                and "password" in config['mysql'] and "database" in config['mysql'] \
+                    and "password" in config['mysql'] and "database" in config['mysql'] \
                     and "charset" in config['mysql']:
                 self.__hostname = config['mysql']['hostname']
                 self.__username = config['mysql']['username']
@@ -42,8 +43,7 @@ class DB:
             exit()
 
     def connect_database(self):
-        """Connects to the database
-        """
+        """Performs connection to the database"""
         try:
             self.__connection = pymysql.connect(host=self.__hostname,
                                                 user=self.__username,
@@ -56,7 +56,7 @@ class DB:
             exit()
 
     def select_all(self, table_name):
-        """
+        """Performs a select (star) statement to a given table.
 
         Args:
             table_name: Name of table that data is to be retrieved from
@@ -65,31 +65,26 @@ class DB:
             All data from table
         """
         with self.__connection.cursor() as cursor:
-            sql = "SELECT * FROM `"+table_name+"`"
+            sql = "SELECT * FROM `" + table_name + "`"
             cursor.execute(sql)
             return cursor.fetchall()
 
-    def select_cols(self, cols, table_name):
-        """
+    def select_cols(self, cols, table):
+        """Perform a select statement for a given list of columns.
 
         Args:
             cols: Columns to be selected [list]
-            table_name: Name of table that data is to be retrieved from
+            table: Name of table that data is to be retrieved from
 
         Returns:
             Data from columns specified
         """
         result = []
         with self.__connection.cursor() as cursor:
-            for c in cols:
-                sql = "SELECT `" + c + "` FROM `" + table_name + "`"
-                cursor.execute(sql)
-                result.append(cursor.fetchall())
+            sql = "SELECT `" + "`, `".join(cols) + "` FROM `" + table + "`"
+            cursor.execute(sql)
+            result.append(cursor.fetchall())
         return result
-
-    # def select_some(self):
-
-    # def select_entry(self, , table_name):
 
     def apply_changes(self):
         """Commits any changes made to the database
@@ -101,6 +96,3 @@ class DB:
         """
         self.__connection.close()
 
-db = DB()
-print(db.select_all("example"))
-print(db.select_cols(["name"] , "example"))
