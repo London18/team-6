@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Brain Tumour Charity WebApp</title>
+</head>
+
+<body background="bg-masthead1.jpg">
+
+  <div class="topnav" style="width: 100%">
+    <a href="main.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="directory.html">Employee Directory</a>
+    <img src="logo.jpg" style="float: right; height: 70px; top:0px">
+  </div>
+
+  <div class="lol">
+  <section id="header-showcase" class="showcase-head">
+    <div id="showcase">
+      <div class="showcase- main container">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $("#hg").fadeOut(1);
+            $("#hg").fadeIn(3000);
+
+          });
+        </script>
+
+        <h1 id="hh">The Brain Tumour Charity</h1>
+        <h2 id="hg">Improving your life today</h2>
+
+      </div>
+    </div>
+  </section>
+</div>
+<section id="header-showcase" class="search">
+  <div id="showcase">
+    <div class="showcase- main container">
+      <h1>Search Engine</h1>
+      <h2>What can we help you with today?</h2>
+
+      <form action="search.html" class="search-btn">
+        <input type="submit" value="Search for question / Add new question" />
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- Directory Search -->
+<section id="header-showcase" class="directory">
+  <div id="showcase">
+    <div class="showcase- main container">
+      <h1>Employee Directory</h1>
+      <h2>Find out which employee is best qualified to answer your query </h2>
+      <form action="directory.html" class="search-btn">
+        <input type="submit" value="Find an employee" />
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs Section -->
+<section id="header-showcase" class="faqs">
+  <div id="showcase">
+    <div class="showcase- main container">
+      <h1>Frequently Asked Questions</h1>
+
+      <button class="accordion">What is tumour</button>
+      <div class="panel">
+        <p>Lorem ipsum...</p>
+      </div>
+
+      <button class="accordion">How to get rid of tumour</button>
+      <div class="panel">
+        <p>Lorem ipsum...</p>
+      </div>
+
+      <script>
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.display === "block") {
+                  panel.style.display = "none";
+              } else {
+                  panel.style.display = "block";
+              }
+          });
+      }
+      </script>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
