@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Search</h1>
+<form  action="" method="post">
+	<input type="text" name="keyword" value="{{request.form.keyword}}">
+	<button value="{{request.form.submit}}">Submit</button>
+</form>
+
+<h2>Directory</h2>
+
+{% for post in posts %}
+		<p>{{ post.keyword }}</p>
+{% endfor %}
+
+<h2>FAQ</h2>
+
+{% for keys in key %}
+		<p>{{ keys.keyword }}</p>
+{% endfor %}
+
+{% endblock content %}
