@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="javascript/main.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Brain Tumour Charity WebApp</title>
 </head>
 
@@ -22,13 +21,20 @@
   <section id="header-showcase" class="showcase-head">
     <div id="showcase">
       <div class="showcase- main container">
-        <h1 id="hh">The Brain Tumour Charity</h1>
-        <h2 id="hh">Improving your life today</h2>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
           $(document).ready(function(){
-          $(".hh").fadeIn();
+            $("#hg").fadeOut(1);
+            $("#hg").fadeIn(3000);
+
           });
         </script>
+
+        <h1 id="hh">The Brain Tumour Charity</h1>
+        <h2 id="hg">Improving your life today</h2>
+
+
       </div>
     </div>
   </section>
@@ -40,7 +46,7 @@
       <h2>What can we help you with today?</h2>
 
       <form action="search.html" class="search-btn">
-        <input type="submit" value="Search/Update Database" />
+        <input type="submit" value="Search for question / Add new question" />
       </form>
 
     </div>
@@ -52,7 +58,7 @@
   <div id="showcase">
     <div class="showcase- main container">
       <h1>Employee Directory</h1>
-
+      <h2>Find out which employee is best qualified to answer your query </h2>
       <form action="directory.html" class="search-btn">
         <input type="submit" value="Find an employee" />
       </form>
@@ -72,11 +78,6 @@
       </div>
 
       <button class="accordion">How to get rid of tumour</button>
-      <div class="panel">
-        <p>Lorem ipsum...</p>
-      </div>
-
-      <button class="accordion">Life expectanacy of tumour patient</button>
       <div class="panel">
         <p>Lorem ipsum...</p>
       </div>
@@ -101,9 +102,6 @@
     </div>
   </div>
 </section>
-
-
-
 
 
 </body>
