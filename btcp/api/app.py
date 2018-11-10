@@ -7,11 +7,17 @@ posts =[
 {
 	'question':'hello',
 	'answer':'world'
+},{
+	'question':'how are you',
+	'answer':'world'
+},{
+	'question':'hello worlddddd',
+	'answer':'world'
 }
 ]
 
 word=[{
-	'keyword':'goodbye'
+	'keyword':''
 }]
 
 
@@ -26,10 +32,11 @@ def godirectory():
 @app.route('/search',methods=['GET','POST'])
 def search():
 	if request.method=="POST" and "keyword" in request.form:
-		search_keyword=request.form['keyword']
-		word.append({'word':search_keyword})
-		flash('You have search the keyword')
-		return render_template('main.html')
+		search_question=request.form['keyword']
+		word.append({'keyword':search_question})
+		print(word)
+		flash('You have search for the keyword')
+		return render_template('result.html',posts=posts,word=word)
 	if request.method=="POST" and "question" in request.form:
 		newquestion=request.form['question']
 		newanswer=request.form['answer']
@@ -38,7 +45,11 @@ def search():
 		flash('Your database has been update')
 		return render_template('main.html')
 	else:
-		return render_template('search.html')
+		return render_template('search.html',posts=posts)
+
+@app.route('/result')
+def result():
+    return render_template('result.html',word=word)
 
 """
 @app.route('/search',methods=['GET','POST'])
