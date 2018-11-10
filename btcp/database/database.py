@@ -5,7 +5,7 @@ import configparser
 class DB:
     """Includes all the methods related to database connection."""
     # Specify file which includes credentials for connection to database
-    CREDENTIALS_FILE = "../../config.ini"
+    CREDENTIALS_FILE = "../config.ini"
 
     def __init__(self):
         """Constructor"""
