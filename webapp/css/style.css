@@ -94,8 +94,9 @@ body {
 
 .showcase-head{
   padding: 5%;
-  background-color: #ffffff;
+  background-image: url("css/header.jpg");
 }
+
 
 #hh, #hg {
   color: #000000;
@@ -114,6 +115,7 @@ form.example input[type=text] {
   float: left;
   width: 80%;
   background: #f1f1f1;
+  margin-top: -1px;
 }
 
 /* Style the submit button */
@@ -143,7 +145,7 @@ form.example::after {
 /*FAQs accordion*/
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-    background-color: #ff6666;
+    background-color: #000000;
     color: #ffffff;
     cursor: pointer;
     padding: 18px;
@@ -216,6 +218,8 @@ input[type=submit]:hover {
 #employee-header{
   margin-left: 40%;
   margin-top: 10%;
+  border-bottom: 2px solid white;
+
 }
 
 #employee-header1{
@@ -228,5 +232,11 @@ input[type=submit]:hover {
 }
 
 #footerspace {
-  padding: 2%;
+  padding: 1.5%;
+}
+
+#logo {
+  margin-left:40%;
+  margin-top:5%;
+  margin-bottom: -5%;
 }

@@ -21,9 +21,25 @@
 
   <h1 id="search-header">Enter your question below</h1>
   <form id="searchbar" class="example" action="action_page.php">
-    <input type="text" placeholder="Search.." name="search">
+    <input type="text" placeholder="Search.." name="search" id="tags">
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
+
+  <!-- Jquery autocomplete input questions-->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    var availableTags = [
+      "What is tumour",
+      "How can you cure tumour",
+      "Carrots and tomatoes"
+    ];
+    $("#tags").autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 
   <h1 id="update-header">Update Database</h1>
     <div id = "update-data">
