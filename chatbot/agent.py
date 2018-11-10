@@ -43,3 +43,7 @@ def main():
     else:
         print(select_answer('bye'))
         exit()
+
+
+while 1 == 1:
+    main()
