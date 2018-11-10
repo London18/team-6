@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .ui-menu-item-wrapper{
+      color:black;
+    }
+  </style>
+</head>
+
+<body style="margin-top: 0px">
+<div style="width:100%">
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/search">Search</a>
+        <a href="/directory">Employee Directory</a>
+        <img src="../static/logo_i.jpg" style="float: right; height: 70px; top: 0px; margin-right: 0px;">
+    </div>
+</div>
+
+<div class="gallery">
+    <img src="../static/bg-masthead1.jpg" style="display: block; margin: auto;">
+</div>
+</div>
+<div class="lol">
+
+  <div style="background-color: white">
+    <div style="margin-left: 10%; margin-right: 10%;">
+    <h1 id="search-header">Enter your question below</h1>
+    <form id="searchbar" class="example" >
+      <input type="text" placeholder="Search.."id="tags"name="keyword" value="{{request.form.keyword}}">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <!-- Jquery autocomplete input questions-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            var availableTags = [
+                "What is tumour",
+                "How can you cure tumour",
+                "Carrots and tomatoes"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
+    </div>
+    <h1 id="update-header">Update Database</h1>
+    <div id = "update-data">
+      <form method="POST">
+        <label for="fname"></label>
+        <input type="text" id="fname" name="question" placeholder="Enter question" value="{{request.form.question}}">
+
+        <label for="lname"></label>
+        <input type="text" id="lname" name="answer" placeholder="Enter answer" value="{{request.form.answer}}">
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <p id="footerspace"></p>
+  </div>
+</div>
+
+
+</body>
+</html>
+
