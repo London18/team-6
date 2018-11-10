@@ -1,11 +1,12 @@
 from btcp.utils.nlp import extract_u_words
+from btcp.database.database import DB
 
 
 class Queries:
     """Contains all the queries."""
 
-    def __init__(self, connection):
-        self.__connection = connection
+    def __init__(self):
+        self.__connection = DB().get_connection()
 
     def select_all(self, table_name):
         """Performs a select (star) statement to a given table.
@@ -64,3 +65,18 @@ class Queries:
                 if keyword_pair == q:
                     return self.find_results(['answer'], str(x['id']), 'qna')
             return ""
+
+    def return_responses(self, cols, table):
+        """Perform a select statement for a given list of columns.
+
+        Args:
+            cols: Columns to be selected [list]
+            table: Name of table that data is to be retrieved from
+
+        Returns:
+            Data from columns specified
+        """
+        with self.__connection.cursor() as cursor:
+            sql = "SELECT `" + "`, `".join(cols) + "` FROM `" + table + "`"
+            cursor.execute(sql)
+            return cursor.fetchall()

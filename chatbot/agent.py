@@ -1,25 +1,18 @@
+from btcp.database.queries import Queries
+
 from wit import Wit
 from random import shuffle
 
-access_token = "BNEKES5EPOWSRKMB3EPK4QI46G7TRPT2"
+WIT_TOKEN = "BNEKES5EPOWSRKMB3EPK4QI46G7TRPT2"
+FB_TOKEN = "EAACmu2Arr2MBAAwJzraQh5y90SoCLWoxERwiLKA2LThnHW36kQqgmqDqhytIZBsAYAZAeBhZBV8cZB4hM8Yo9Gpx6KCOOYgjaZC9ygAxr8HdZAbf6mMnUMnRn6wDAos3ExE7VlgxMd2CTZAqHu0DCpNGPEMD7r8wPNrx313W3sEhQZDZD"
 THRESHOLD = 0.5
 
-responses = {
-    'rephrase': ['Could you please rephrase that?'],
-    'unknown': [
-        'Unfortunately I am not able to answer that. Please see our site for FAQs: https://www.thebraintumourcharity.org/frequently-asked-questions/'],
-    'symptoms': [
-        'Severe, persistent headaches. Persistent nausea, vomitting and drowsiness. Progressive weakness or paralysis on one side of the body.'],
-    'tumour_info_carer': [
-        'It is important to remember that brain tumours are very rare. If your child is experiencing symptoms listed on our information pages, '
-        'or you have any concerns, you should speak to your doctor. Read our information on childhood brain tumour symptoms '
-        ' https://www.thebraintumourcharity.org/understanding-brain-tumours/symptoms-and-information/child-brain-tumour-symptoms/.'],
-    'tumour_info': [
-        'It is important to remember that brain tumours are very rare, however if you have any concerns at all you should always speak to your doctor. '
-        'Our page on adult brain tumour symptoms will inform you about the symptoms of a brain tumour: '
-        ' https://www.thebraintumourcharity.org/understanding-brain-tumours/symptoms-and-information/adult-brain-tumour-symptoms/.'],
-    'bye': ['Thank you for contacting the Brain Tumour Charity. Goodbye!', 'Bye bye!', 'Goodbye']
-}
+q = Queries()
+temp = q.return_responses(['intent', 'response'], 'chatbot')
+responses = dict()
+
+for r in temp:
+    responses[r['intent']] = [r['response']]
 
 
 def select_answer(intent):
@@ -43,7 +36,7 @@ def get_first_intent(response):
 def main():
     message_input = input()
     if message_input.lower() not in ['goodbye', 'bye', 'bye bye']:
-        client = Wit(access_token=access_token)
+        client = Wit(access_token=WIT_TOKEN)
         response = client.message(message_input)
         intent = get_first_intent(response)
         print(select_answer(intent))
