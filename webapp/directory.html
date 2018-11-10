@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Brain Tumour Charity WebApp</title>
+</head>
+
+
+<body>
+
+  <div class="topnav">
+    <a class="active" href="main.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="directory.html">Employee Directory</a>
+  </div>
+
+  <div>
+    <h1 id="employee-header"> Employee Directory </h1>
+    <h2 id="employee-header1"> Click on the relevant box to find the employees that specialise in the respective fields </h2>
+  </div>
+
+  <button class="accordion">Emotional Health</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Mental Health</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Personal Wellbeing</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <script>
+
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+              panel.style.display = "none";
+          } else {
+              panel.style.display = "block";
+          }
+      });
+  }
+  </script>
+
+</body>
